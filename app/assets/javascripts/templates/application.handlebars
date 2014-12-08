@@ -5,6 +5,18 @@
       <p style="text-transform: uppercase;color: #358efb;">Lousing</p>
     </a>
   </div>
-  <button type="button" class="btn btn-default navbar-btn pull-right">Sign in</button>
+  {{#if currentUser}}
+    {{#link-to 'users.sign_out' tagName="button" classNames="btn btn-default navbar-btn pull-right"}}
+      Sign Out
+    {{/link-to}}
+  {{else}}
+    {{#link-to 'users.sign_in' tagName="button" classNames="btn btn-default navbar-btn pull-right"}}
+      Sign in
+    {{/link-to}}
+  {{/if}}
 </div>
 </nav>
+
+<div class="container-fluid">
+  {{outlet}}
+</div>
