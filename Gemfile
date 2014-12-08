@@ -46,3 +46,4 @@ gem "ember-rails", "~>0.14"
 gem "ember-source", "~>1.1"
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+gem 'devise'
