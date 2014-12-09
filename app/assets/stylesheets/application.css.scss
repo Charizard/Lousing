@@ -1,2 +1,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar{
+  margin-bottom: 0px;
+}
+
+.property-listing{
+  padding: 5px;
+  list-style-type: none;
+}
+
+.property-listing a:hover{
+  background-color: #fefefe;
+}
+
+.property-detail{
+  box-shadow: -1px 0px 2px rgba(0,0,0,0.2) inset;
+  height: 100%;
+}
+
+.rupee-symbol:before{
+  content: "\20a8";
+  font-weight: bold;
+}
+
+.thumbnail{
+  margin-bottom: 0px;
+}

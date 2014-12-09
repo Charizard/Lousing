@@ -18,5 +18,20 @@
 </nav>
 
 <div class="container-fluid">
-  {{outlet}}
+
+  {{#if currentUser}}
+  <div class="row">
+    <div class="col-md-8 property-detail">
+      {{outlet}}
+    </div>
+    <div class="col-md-4">
+      {{render 'properties_listing' this}}
+    </div>
+  </div>
+  {{else}}
+    <div class="jumbotron">
+      <p>Welcome to the world of</p>
+      <h2>Real Photos, Real Locations</h2>
+    </div>
+  {{/if}}
 </div>
