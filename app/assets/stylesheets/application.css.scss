@@ -3,8 +3,17 @@
 
 body, html, .ember-view, .container-fluid { height: 100%; }
 
-.navbar{
-  margin-bottom: 0px;
+.sign_in_form{
+  width: 400px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jumbotron{
+  margin-top: 20px;
 }
 
 .property-listing{

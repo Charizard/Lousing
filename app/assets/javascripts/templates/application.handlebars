@@ -6,9 +6,24 @@
     </a>
   </div>
   {{#if currentUser}}
-    {{#link-to 'users.sign_out' tagName="button" classNames="btn btn-default navbar-btn pull-right"}}
-      Sign Out
-    {{/link-to}}
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{currentUser.name}}<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li>
+            {{#link-to 'users.sign_out'}}
+              Sign Out
+            {{/link-to}}
+          </li>
+        </ul>
+        </li>
+      </ul>
+    </div>
   {{else}}
     {{#link-to 'users.sign_in' tagName="button" classNames="btn btn-default navbar-btn pull-right"}}
       Sign in
@@ -17,21 +32,19 @@
 </div>
 </nav>
 
-<div class="container-fluid">
-
-  {{#if currentUser}}
-  <div class="row" style="height: 100%;">
-    <div class="col-md-9 property-detail" style="height: 100%;">
-      {{outlet}}
-    </div>
-    <div class="col-md-3" style="padding: 0px;">
-      {{render 'properties_listing' this}}
+{{#if currentUser}}
+  <div class="container-fluid" style="margin-top: -20px;">
+    <div class="row" style="height: 100%;">
+      <div class="col-md-9 property-detail" style="height: 100%;">
+        {{outlet}}
+      </div>
+      <div class="col-md-3" style="padding: 0px;">
+        {{render 'properties_listing' this}}
+      </div>
     </div>
   </div>
-  {{else}}
-    <div class="jumbotron">
-      <p>Welcome to the world of</p>
-      <h2>Real Photos, Real Locations</h2>
-    </div>
-  {{/if}}
-</div>
+{{else}}
+<div class="container-fluid">
+    {{outlet}}
+  </div>
+{{/if}}

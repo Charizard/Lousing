@@ -1,1 +1,8 @@
-<h2>Welcome {{currentUser.name}}!!!</h2>
+{{#if currentUser}}
+  <h2>Welcome {{currentUser.name}}!!!</h2>
+{{else}}
+  <div class="jumbotron">
+    <p>Welcome to the world of</p>
+    <h2>Real Photos, Real Locations</h2>
+  </div>
+{{/if}}
