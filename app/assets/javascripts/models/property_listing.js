@@ -7,6 +7,6 @@ Lousing.PropertyListing = DS.Model.extend({
   furnish_type: DS.attr('string'),
   rent: DS.attr('number'),
   security_deposit: DS.attr('number'),
-  poster_id: DS.belongsTo('user'),
+  poster: DS.belongsTo('user'),
   created_at: DS.attr('string')
 });

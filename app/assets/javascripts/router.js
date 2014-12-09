@@ -7,4 +7,7 @@ Lousing.Router.map(function() {
   });
 
   this.resource('property_detail', { path: "listing/:listing_id" });
+  this.resource('listings', function(){
+    this.route('new');
+  });
 });
