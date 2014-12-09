@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bhk: 1
+  address: MyString
+  property_type: MyString
+  buildup_area: 1
+  bathrooms: 1
+  furnish_type: MyString
+  rent: 1
+  security_deposit: 1
+  poster_id: 
+
+two:
+  bhk: 1
+  address: MyString
+  property_type: MyString
+  buildup_area: 1
+  bathrooms: 1
+  furnish_type: MyString
+  rent: 1
+  security_deposit: 1
+  poster_id: 

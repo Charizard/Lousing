@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208142652) do
+ActiveRecord::Schema.define(version: 20141209052504) do
+
+  create_table "property_listings", force: true do |t|
+    t.integer  "bhk"
+    t.string   "address"
+    t.string   "property_type"
+    t.integer  "buildup_area"
+    t.integer  "bathrooms"
+    t.string   "furnish_type"
+    t.integer  "rent"
+    t.integer  "security_deposit"
+    t.integer  "poster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "property_listings", ["poster_id"], name: "index_property_listings_on_poster_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
