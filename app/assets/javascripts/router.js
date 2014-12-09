@@ -5,4 +5,6 @@ Lousing.Router.map(function() {
     this.route('sign_in');
     this.route('sign_out');
   });
+
+  this.resource('property_detail', { path: "listing/:listing_id" });
 });
