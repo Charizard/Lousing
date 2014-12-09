@@ -4,7 +4,6 @@ Ember.Application.initializer({
   initialize: function(container) {
     var store = container.lookup('store:main');
     var attributes = $('meta[name="current-user"]').attr('content')
-    console.log(attributes)
 
     if(attributes) {
       var user = store.push('user', store.serializerFor(Lousing.User).normalize(Lousing.User, JSON.parse(attributes)))
