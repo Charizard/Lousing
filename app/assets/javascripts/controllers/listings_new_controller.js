@@ -14,7 +14,7 @@ Lousing.ListingsNewController = Ember.ObjectController.extend({
       });
 
       property_listing.save().then(function(){
-        console.log('saved successfully');
+        Lousing.Alert('success', "Successfully created the Property Listing.")
       }, function(){
         alert('Not saved');
       });

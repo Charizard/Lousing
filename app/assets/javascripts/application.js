@@ -25,4 +25,20 @@
 // for more details see: http://emberjs.com/guides/application/
 Lousing = Ember.Application.create();
 
+Lousing.Alert = function(type, message) {
+  $('.lousing-alert').html(
+    '<div class="alert alert-' + type + ' alert-dismissible fade in" role="alert">' +
+      '<button type="button" class="close" data-dismiss="alert">' +
+       '<span aria-hidden="true">&times;</span>' +
+        '<span class="sr-only">Close</span>' +
+      '</button>' +
+      message
+    + '</div>');
+
+  window.setTimeout(function(){
+    $('.lousing-alert').alert('close');
+    $('.lousing-alert').html('');
+  }, 3000);
+}
+
 //= require_tree .
