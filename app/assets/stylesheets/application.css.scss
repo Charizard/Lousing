@@ -76,3 +76,14 @@ body, html, .ember-view, .container-fluid { height: 100%; }
   z-index: 20000;
   top: 8%;
 }
+
+.property-listing-index{
+  position: absolute;
+  left: 0px;
+  overflow-x: hidden;
+  height: 100%;
+  bottom: 0px;
+  width: 100%;
+  min-height: 90px;
+  top: 0px;
+}
