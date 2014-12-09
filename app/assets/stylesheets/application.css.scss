@@ -55,3 +55,18 @@ body, html, .ember-view, .container-fluid { height: 100%; }
   width: inherit;
   height: inherit;
 }
+
+.btn-blue{
+  color: #ffffff;
+  background-color: #358efb;
+  border-color: #2183fb;
+}
+
+.btn-block{
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 16px;
+  line-height: 44px;
+  border-radius: 2px;
+  height: 44px;
+}
