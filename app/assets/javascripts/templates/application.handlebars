@@ -20,11 +20,11 @@
 <div class="container-fluid">
 
   {{#if currentUser}}
-  <div class="row">
-    <div class="col-md-8 property-detail">
+  <div class="row" style="height: 100%;">
+    <div class="col-md-9 property-detail" style="height: 100%;">
       {{outlet}}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3" style="padding: 0px;">
       {{render 'properties_listing' this}}
     </div>
   </div>

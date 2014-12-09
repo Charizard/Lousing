@@ -1,20 +1,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body, html, .ember-view, .container-fluid { height: 100%; }
+
 .navbar{
   margin-bottom: 0px;
 }
 
 .property-listing{
-  padding: 5px;
+  margin: 5px 0px;
   list-style-type: none;
+  display: block;
+  height: 87px;
+}
+
+.property-listing a{
+  display: block;
+  width: inherit;
+  height: inherit;
+  padding: 5px;
 }
 
 .property-listing a.active{
-  background-color: #fefefe;
+  background-color: #eee;
 }
 
 .property-detail{
+  padding-left: 15px;
   box-shadow: -1px 0px 2px rgba(0,0,0,0.2) inset;
   height: 100%;
 }
@@ -26,4 +38,11 @@
 
 .thumbnail{
   margin-bottom: 0px;
+}
+
+.mgn-10{
+  display: block;
+  margin: 10px;
+  width: inherit;
+  height: inherit;
 }
