@@ -91,3 +91,22 @@ body, html, .ember-view, .container-fluid { height: 100%; }
   min-height: 90px;
   top: 0px;
 }
+
+.icon-shortlist:before {
+  content: "\2764";
+}
+
+.icon-shortlist{
+  font-style: normal;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+.icon-empty {
+  color: #656565;
+}
+
+.icon-filled {
+  color: #ea325d;
+}
