@@ -3,7 +3,7 @@ Lousing.PropertiesListingController = Ember.ArrayController.extend({
     toggleShortlist: function(propertyListing){
       var shortlist = this.store.createRecord('property_shortlisting', {
         user: this.currentUser,
-        property: propertyListing
+        property_listing: propertyListing
       });
 
       shortlist.save();

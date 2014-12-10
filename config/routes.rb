@@ -3,4 +3,5 @@ Lousing::Application.routes.draw do
   root :to => 'assets#index'
 
   resources :property_listings, :only => [:index, :create]
+  resources :property_shortlistings, :only => [:create]
 end
