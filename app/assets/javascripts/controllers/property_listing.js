@@ -3,9 +3,6 @@ Lousing.PropertyListingController = Ember.ObjectController.extend({
     var users = this.get('model').get('shortlisted_users');
     var self = this;
     return users.any(function(item){
-      // window.item = item;
-      console.log(item.get('user_id'));
-      console.log(self.currentUser.get('id'));
       return item.get('user.id') === self.currentUser.get('id');
     });
   }.property('shortlisted_users.length'),
