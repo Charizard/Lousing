@@ -11,7 +11,7 @@
               <span class="rupee-symbol"></span>
               <b>{{rent}}</b>
             </h3>
-            <i class="icon-shortlist icon-empty" {{action 'toggleShortlist' this}}></i>
+            <i {{bind-attr class=":icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist'}}></i>
           </div>
       {{/link-to}}
     </li>
