@@ -8,5 +8,6 @@ Lousing.PropertyListing = DS.Model.extend({
   rent: DS.attr('number'),
   security_deposit: DS.attr('number'),
   poster: DS.belongsTo('user'),
-  created_at: DS.attr('string')
+  created_at: DS.attr('string'),
+  shortlisted_users: DS.hasMany('property_shortlisting')
 });
