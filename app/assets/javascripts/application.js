@@ -20,6 +20,7 @@
 //= require ember-data
 //= require_self
 //= require ./current_user
+//= require ./authentication
 //= require ./lousing
 
 // for more details see: http://emberjs.com/guides/application/
