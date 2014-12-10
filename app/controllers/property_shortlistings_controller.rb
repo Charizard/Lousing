@@ -9,6 +9,15 @@ class PropertyShortlistingsController < ApplicationController
     end
   end
 
+  def destroy_shortlisting
+    short_listing = PropertyListingsUser.find_by(property_shortlistings_params)
+    if short_listing.destroy
+      render :json => short_listing
+    else
+      render :json => { :error => short_listing.errors.full_messages }, :status => :unprocessable_entity
+    end
+  end
+
   private
 
   def property_shortlistings_params
