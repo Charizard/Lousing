@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if current_user
       render :json => current_user
     else
-      render :text => "Not logged in", :status => :unprocessable_entity
+      render :json => { :error => "Not logged in" }
     end
   end
 end
