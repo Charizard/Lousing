@@ -5,7 +5,7 @@ class PropertyShortlistingsController < ApplicationController
     if short_listing.save
       render :json => short_listing
     else
-      render :text => "#{short_listing.errors.full_messages.join(', ')}", :status => :unprocessable_entity
+      render :json => { :error => short_listing.errors.full_messages }, :status => :unprocessable_entity
     end
   end
 
