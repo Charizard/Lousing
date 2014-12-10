@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209052504) do
+ActiveRecord::Schema.define(version: 20141210065501) do
 
   create_table "property_listings", force: true do |t|
     t.integer  "bhk"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20141209052504) do
   end
 
   add_index "property_listings", ["poster_id"], name: "index_property_listings_on_poster_id", using: :btree
+
+  create_table "property_listings_users", force: true do |t|
+    t.integer  "property_listing_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "property_listings_users", ["property_listing_id"], name: "index_property_listings_users_on_property_listing_id", using: :btree
+  add_index "property_listings_users", ["user_id"], name: "index_property_listings_users_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

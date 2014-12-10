@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :property_listings, :foreign_key => :poster_id
+  has_and_belongs_to_many :short_listed_properties, :class_name => "PropertyListing"
 end
