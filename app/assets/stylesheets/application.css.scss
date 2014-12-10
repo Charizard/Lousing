@@ -94,9 +94,11 @@ body, html, .ember-view, .container-fluid { height: 100%; }
 
 .icon-shortlist:before {
   content: "\2764";
+  font-style: normal;
+  margin: 0px 5px;
 }
 
-.icon-shortlist{
+.icon-top-right{
   font-style: normal;
   position: absolute;
   right: 10px;
