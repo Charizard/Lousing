@@ -3,7 +3,7 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="tab active"><a href="#all_properties" aria-controls="all_properties" role="tab" data-toggle="tab">{{length}} Results</a></li>
-    <li role="presentation" class="tab"><a href="#shortlisted_properties" aria-controls="shortlisted_properties" role="tab" data-toggle="tab">Shortlist</a></li>
+    <li role="presentation" class="tab"><a href="#shortlisted_properties" aria-controls="shortlisted_properties" role="tab" data-toggle="tab">{{currentUser.short_listed_properties.length}} Shortlist</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -31,23 +31,7 @@
     </div>
     <div role="tabpanel" class="tab-pane fade" id="shortlisted_properties">
       <div class="property-listing-index">
-        {{#each}}
-          <li class="row property-listing">
-            {{#link-to 'property_detail' this}}
-                <div class="col-md-3 thumbnail">
-                  <img data-src="holder.js/90x90" src="man-u-logo.gif"/>
-                </div>
-                <div class="col-md-9">
-                  {{bhk}} BHK, {{furnish_type}}</p>
-                  <h3>
-                    <span class="rupee-symbol"></span>
-                    <b>{{rent}}</b>
-                  </h3>
-                  <i {{bind-attr class=":icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist'}}></i>
-                </div>
-            {{/link-to}}
-          </li>
-        {{/each}}
+        {{render "shortlisted_properties" currentUser.short_listed_properties}}
       </div>
     </div>
   </div>

@@ -1,0 +1,16 @@
+{{#each}}
+  <li class="row property-listing">
+    {{#link-to 'property_detail' this}}
+        <div class="col-md-3 thumbnail">
+          <img data-src="holder.js/90x90" src="man-u-logo.gif"/>
+        </div>
+        <div class="col-md-9">
+          {{bhk}} BHK, {{furnish_type}}</p>
+          <h3>
+            <span class="rupee-symbol"></span>
+            <b>{{rent}}</b>
+          </h3>
+        </div>
+    {{/link-to}}
+  </li>
+{{/each}}
