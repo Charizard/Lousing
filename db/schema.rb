@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210065501) do
+ActiveRecord::Schema.define(version: 20141211122142) do
 
   create_table "property_listings", force: true do |t|
     t.integer  "bhk"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141210065501) do
     t.integer  "poster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_url"
   end
 
   add_index "property_listings", ["poster_id"], name: "index_property_listings_on_poster_id", using: :btree
