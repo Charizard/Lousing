@@ -42,6 +42,7 @@ body, html, .ember-view, .container-fluid { height: 100%; }
   padding-left: 15px;
   box-shadow: -1px 0px 2px rgba(0,0,0,0.2) inset;
   height: 100%;
+  overflow-y: scroll;
 }
 
 .rupee-symbol:before{
@@ -125,5 +126,14 @@ body, html, .ember-view, .container-fluid { height: 100%; }
     border-radius: 0px !important;
     background-color: #eeeeee;
     text-align: center;
+  }
+}
+
+.own-properties{
+  margin: 5px 0px;
+  list-style-type: none;
+  overflow-y: scroll;
+  a {
+    margin-left: 10px;
   }
 }

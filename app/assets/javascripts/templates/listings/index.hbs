@@ -1,0 +1,20 @@
+{{#each}}
+  <li class="row own-properties">
+    <div class="col-md-3 thumbnail">
+      <img data-src="holder.js/90x90" src="man-u-logo.gif"/>
+    </div>
+    <div class="col-md-9">
+      {{bhk}} BHK, {{furnish_type}}</p>
+      <h3>
+        <span class="rupee-symbol"></span>
+        <b>{{rent}}</b>
+      </h3>
+    </div>
+    {{#link-to 'property_detail' this}}
+      Edit
+    {{/link-to}}
+  </li>
+{{else}}
+  <h3 style="text-align: center;">You don't have any property Listed</h3>
+  <h3 style="text-align: center;">{{#link-to 'listings.new'}}Click here{{/link-to}} to add a new listing</h3>
+{{/each}}
