@@ -1,10 +1,12 @@
 <div role="tabpanel">
 
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="tab active"><a href="#all_properties" aria-controls="all_properties" role="tab" data-toggle="tab">{{length}} Results</a></li>
-    <li role="presentation" class="tab"><a href="#shortlisted_properties" aria-controls="shortlisted_properties" role="tab" data-toggle="tab">{{currentUser.short_listed_properties.length}} Shortlist</a></li>
-  </ul>
+  {{#unless currentUser.is_landlord}}
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="tab active"><a href="#all_properties" aria-controls="all_properties" role="tab" data-toggle="tab">{{length}} Results</a></li>
+      <li role="presentation" class="tab"><a href="#shortlisted_properties" aria-controls="shortlisted_properties" role="tab" data-toggle="tab">{{currentUser.short_listed_properties.length}} Shortlist</a></li>
+    </ul>
+  {{/unless}}
 
   <!-- Tab panes -->
   <div class="tab-content">
@@ -22,18 +24,22 @@
                     <span class="rupee-symbol"></span>
                     <b>{{rent}}</b>
                   </h3>
-                  <i {{bind-attr class=":icon-top-right :icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist'}}></i>
+                  {{#unless currentUser.is_landlord}}
+                    <i {{bind-attr class=":icon-top-right :icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist'}}></i>
+                  {{/unless}}
                 </div>
             {{/link-to}}
           </li>
         {{/each}}
       </div>
     </div>
-    <div role="tabpanel" class="tab-pane fade" id="shortlisted_properties">
-      <div class="property-listing-index">
-        {{render "shortlisted_properties" currentUser.short_listed_properties}}
+    {{#unless currentUser.is_landlord}}
+      <div role="tabpanel" class="tab-pane fade" id="shortlisted_properties">
+        <div class="property-listing-index">
+          {{render "shortlisted_properties" currentUser.short_listed_properties}}
+        </div>
       </div>
-    </div>
+    {{/unless}}
   </div>
 
 </div>

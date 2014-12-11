@@ -31,7 +31,7 @@ Lousing.PropertyListingController = Ember.ObjectController.extend({
           type: "DELETE",
           data: { property_shortlisting: { user_id: this.currentUser.get('id'), property_listing_id: this.get('model.id') } },
           success: function(response){
-            // We are associating the shortlisted_users of the property_listing
+            // We had associated the shortlisted_users of the property_listing
             // directly to the user, we need to remove it.
             self.currentUser.get('short_listed_properties').
               removeObject(property_listing);
