@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body, html, .ember-view, .container-fluid { height: 100%; }
+body, html, div.ember-view, .container-fluid { height: 100%; }
 
 .sign_in_form, .new_listing_form, .absolute-center{
   width: 400px;
@@ -188,4 +188,8 @@ body, html, .ember-view, .container-fluid { height: 100%; }
 
 .thumbnail{
   padding: 0px;
+}
+
+.no-margin{
+  margin: 0px !important;
 }

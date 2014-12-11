@@ -1,18 +1,5 @@
 {{#each}}
-  <li class="row property-listing">
-    {{#link-to 'property_detail' this}}
-        <div class="col-md-3 thumbnail">
-          <img data-src="holder.js/90x90" {{bind-attr src="image_url"}}/>
-        </div>
-        <div class="col-md-9">
-          {{bhk}} BHK, {{furnish_type}}</p>
-          <h3>
-            <span class="rupee-symbol"></span>
-            <b>{{rent}}</b>
-          </h3>
-        </div>
-    {{/link-to}}
-  </li>
+  {{property-listing-card property_listing=this current_user=currentUser hideShortlist=true}}
 {{else}}
   <h3 style="text-align: center;">Shotlist by clicking on the</h3>
   <h3 style="text-align: center;"><i class="icon-shortlist"></i></h3>

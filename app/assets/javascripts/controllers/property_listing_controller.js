@@ -1,9 +1,4 @@
 Lousing.PropertyListingController = Ember.ObjectController.extend({
-  isShortlisted: function() {
-    var self = this;
-
-    return this.currentUser.get('short_listed_properties').contains(this.get('model'));
-  }.property('shortlisted_users.length'),
   actions: {
     toggleShortlist: function(){
       if(this.get('model.shortlisted_users.length') == 0) {

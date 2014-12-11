@@ -1,0 +1,19 @@
+<li class="row property-listing">
+  {{#link-to 'property_detail' property_listing}}
+      <div class="col-md-4 thumbnail">
+        <img data-src="holder.js/90x90" {{bind-attr src="property_listing.image_url"}}/>
+      </div>
+      <div class="col-md-8">
+        {{property_listing.bhk}} BHK, {{property_listing.furnish_type}}</p>
+        <h3>
+          <span class="rupee-symbol"></span>
+          <b>{{property_listing.rent}}</b>
+        </h3>
+        {{#unless hideShortlist}}
+          {{#unless current_user.is_landlord}}
+            <i {{bind-attr class=":icon-top-right :icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist' bubbles=false}}></i>
+          {{/unless}}
+        {{/unless}}
+      </div>
+  {{/link-to}}
+</li>

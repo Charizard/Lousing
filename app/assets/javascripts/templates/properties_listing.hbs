@@ -13,23 +13,7 @@
     <div role="tabpanel" class="tab-pane fade in active" id="all_properties">
       <div class="property-listing-index">
         {{#each}}
-          <li class="row property-listing">
-            {{#link-to 'property_detail' this}}
-                <div class="col-md-4 thumbnail">
-                  <img data-src="holder.js/90x90" {{bind-attr src="image_url"}}/>
-                </div>
-                <div class="col-md-8">
-                  {{bhk}} BHK, {{furnish_type}}</p>
-                  <h3>
-                    <span class="rupee-symbol"></span>
-                    <b>{{rent}}</b>
-                  </h3>
-                  {{#unless currentUser.is_landlord}}
-                    <i {{bind-attr class=":icon-top-right :icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist' bubbles=false}}></i>
-                  {{/unless}}
-                </div>
-            {{/link-to}}
-          </li>
+          {{property-listing-card property_listing=this current_user=currentUser}}
         {{/each}}
       </div>
     </div>
