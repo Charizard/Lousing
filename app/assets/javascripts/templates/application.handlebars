@@ -45,19 +45,4 @@
 </div>
 </nav>
 
-{{#if currentUser}}
-  <div class="container-fluid" style="margin-top: -20px;">
-    <div class="row" style="height: 100%;">
-      <div class="col-md-9 property-detail" style="height: 100%;">
-        {{outlet}}
-      </div>
-      <div class="col-md-3" style="padding: 0px; height: 100%;">
-        {{render 'properties_listing' this}}
-      </div>
-    </div>
-  </div>
-{{else}}
-  <div class="container-fluid">
-    {{outlet}}
-  </div>
-{{/if}}
+{{outlet}}

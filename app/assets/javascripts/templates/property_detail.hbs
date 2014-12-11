@@ -1,43 +1,54 @@
-{{#link-to 'index' classNames="btn-close exit"}}
-  X
-{{/link-to}}
+  <div class="container-fluid" style="margin-top: -20px;">
+    <div class="row" style="height: 100%;">
+      <div class="col-md-9 property-detail" style="height: 100%;">
 
-<div class="row" style="padding-left: 15px; padding-top: 30px;">
-  <h2>{{bhk}} BHK, {{furnish_type}}</h2>
-  <h3>
-    <span class="rupee-symbol"></span>
-    <span>{{rent}}</span>
-  </h3>
-  <h5 class="text-muted">
-    Security Deposit:
-    <span class="rupee-symbol"></span>
-    <span>{{security_deposit}}</span>
-  </h5>
-  <div class="btn-dark-blue contact contact-section new-btn" {{action 'contact_agent'}}>
-    <i class="icon icon-contact-filled"></i>
-    <span class="text">Contact Agent</span>
+        {{#link-to 'index' classNames="btn-close exit"}}
+          X
+        {{/link-to}}
+
+        <div class="row" style="padding-left: 15px; padding-top: 30px;">
+          <h2>{{bhk}} BHK, {{furnish_type}}</h2>
+          <h3>
+            <span class="rupee-symbol"></span>
+            <span>{{rent}}</span>
+          </h3>
+          <h5 class="text-muted">
+            Security Deposit:
+            <span class="rupee-symbol"></span>
+            <span>{{security_deposit}}</span>
+          </h5>
+          <div class="btn-dark-blue contact contact-section new-btn" {{action 'contact_agent'}}>
+            <i class="icon icon-contact-filled"></i>
+            <span class="text">Contact Agent</span>
+          </div>
+          <table class="details table table-condensed">
+            <tr>
+              <td>Property</td>
+              <td>{{property_type}}</td>
+            </tr>
+            <tr>
+              <td>Build-Up Area</td>
+              <td>{{buildup_area}} sq.ft</td>
+            </tr>
+            <tr>
+              <td>Bathrooms</td>
+              <td>{{bathrooms}}</td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>{{address}}</td>
+            </tr>
+            <tr>
+              <td>Posted</td>
+              <td>{{created_at}} ago</td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+      <div class="col-md-3" style="padding: 0px; height: 100%;">
+        {{render 'properties_listing' controllers.application}}
+      </div>
+    </div>
   </div>
-  <table class="details table table-condensed">
-    <tr>
-      <td>Property</td>
-      <td>{{property_type}}</td>
-    </tr>
-    <tr>
-      <td>Build-Up Area</td>
-      <td>{{buildup_area}} sq.ft</td>
-    </tr>
-    <tr>
-      <td>Bathrooms</td>
-      <td>{{bathrooms}}</td>
-    </tr>
-    <tr>
-      <td>Address</td>
-      <td>{{address}}</td>
-    </tr>
-    <tr>
-      <td>Posted</td>
-      <td>{{created_at}} ago</td>
-    </tr>
-  </table>
-
-</div>

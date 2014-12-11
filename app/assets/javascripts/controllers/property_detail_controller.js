@@ -1,4 +1,5 @@
 Lousing.PropertyDetailController = Ember.ObjectController.extend({
+  needs: ['application'],
   actions: {
     contact_agent: function(){
       var property_listing = this.get('model');

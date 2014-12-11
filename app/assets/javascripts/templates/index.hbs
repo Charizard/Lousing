@@ -1,6 +1,15 @@
 {{#if currentUser}}
-  <h2 style="text-align: center;">Welcome {{currentUser.name}}!!!</h2>
-  <h4 style="text-align: center;">Click on a lising on your right, to view its details<h4>
+  <div class="container-fluid" style="margin-top: -20px;">
+    <div class="row" style="height: 100%;">
+      <div class="col-md-9 property-detail" style="height: 100%;">
+        <h2 style="text-align: center;">Welcome {{currentUser.name}}!!!</h2>
+        <h4 style="text-align: center;">Click on a lising on your right, to view its details<h4>
+      </div>
+      <div class="col-md-3" style="padding: 0px; height: 100%;">
+        {{render 'properties_listing' controllers.application}}
+      </div>
+    </div>
+  </div>
 {{else}}
   <div class="jumbotron">
     <p>Welcome to the world of</p>
