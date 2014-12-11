@@ -17,10 +17,12 @@
             <span class="rupee-symbol"></span>
             <span>{{security_deposit}}</span>
           </h5>
-          <div class="btn-dark-blue contact contact-section new-btn" {{action 'contact_agent'}}>
-            <i class="icon icon-contact-filled"></i>
-            <span class="text">Contact Agent</span>
-          </div>
+          {{#unless currentUser.is_landlord}}
+            <div class="btn-dark-blue contact contact-section new-btn" {{action 'contact_agent'}}>
+              <i class="icon icon-contact-filled"></i>
+              <span class="text">Contact Landlord</span>
+            </div>
+          {{/unless}}
           <table class="details table table-condensed">
             <tr>
               <td>Property</td>
