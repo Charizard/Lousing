@@ -21,6 +21,10 @@ class PropertyListingsController < ApplicationController
     end
   end
 
+  def contact_agent
+    render :json => {}
+  end
+
   private
 
   def property_listing_params

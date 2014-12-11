@@ -1,4 +1,8 @@
-<div class="row">
+{{#link-to 'index' classNames="btn-close exit"}}
+  X
+{{/link-to}}
+
+<div class="row" style="padding-left: 15px; padding-top: 30px;">
   <h2>{{bhk}} BHK, {{furnish_type}}</h2>
   <h3>
     <span class="rupee-symbol"></span>
@@ -9,6 +13,10 @@
     <span class="rupee-symbol"></span>
     <span>{{security_deposit}}</span>
   </h5>
+  <div class="btn-dark-blue contact contact-section new-btn" {{action 'contact_agent'}}>
+    <i class="icon icon-contact-filled"></i>
+    <span class="text">Contact Agent</span>
+  </div>
   <table class="details table table-condensed">
     <tr>
       <td>Property</td>
@@ -31,4 +39,5 @@
       <td>{{created_at}} ago</td>
     </tr>
   </table>
+
 </div>

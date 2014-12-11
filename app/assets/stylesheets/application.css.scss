@@ -138,3 +138,50 @@ body, html, .ember-view, .container-fluid { height: 100%; }
     margin-left: 10px;
   }
 }
+
+.contact-section{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.btn-dark-blue{
+  padding: 10px;
+  color: #ffffff;
+  background-color: #4378dd;
+  border-color: #326cda;
+}
+
+.btn-dark-blue:hover{
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #326cda;
+  text-decoration: none;
+}
+
+.btn-close{
+  width: 44px;
+  display: inline-block;
+  font-size: 21px;
+  text-align: center;
+  background-color: #313a49;
+  padding: 0;
+  font-size: 10px;
+  line-height: 44px;
+  border-radius: 0px;
+  height: 44px;
+  color: #fff;
+}
+
+.btn-close:hover{
+  color: #fff;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.exit{
+  position: absolute;
+  left: 0px;
+  font-size: 16px;
+  box-shadow: -1px -1px 5px 1px rgba(0,0,0,0.3);
+}
