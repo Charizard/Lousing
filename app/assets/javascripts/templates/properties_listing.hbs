@@ -25,7 +25,7 @@
                     <b>{{rent}}</b>
                   </h3>
                   {{#unless currentUser.is_landlord}}
-                    <i {{bind-attr class=":icon-top-right :icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist'}}></i>
+                    <i {{bind-attr class=":icon-top-right :icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist' bubbles=false}}></i>
                   {{/unless}}
                 </div>
             {{/link-to}}

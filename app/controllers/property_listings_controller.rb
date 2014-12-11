@@ -12,6 +12,15 @@ class PropertyListingsController < ApplicationController
     end
   end
 
+  def update
+    property_listing = PropertyListing.find(params[:id])
+    if property_listing.update_attributes(property_listing_params)
+      render :json => property_listing
+    else
+      render :text => "#{property_listing.errors.full_messages}", :status => :unprocessable_entity
+    end
+  end
+
   private
 
   def property_listing_params
