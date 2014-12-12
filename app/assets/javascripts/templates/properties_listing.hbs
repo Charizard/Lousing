@@ -12,8 +12,8 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="all_properties">
       <div class="property-listing-index">
-        {{#each property_listing in model}}
-          {{property-listing-card property_listing=property_listing current_user=currentUser}}
+        {{#each}}
+          {{property-listing-card property_listing=this.model current_user=currentUser}}
         {{/each}}
       </div>
     </div>
