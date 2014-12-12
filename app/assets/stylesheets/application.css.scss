@@ -193,3 +193,16 @@ body, html, div.ember-view, .container-fluid { height: 100%; }
 .no-margin{
   margin: 0px !important;
 }
+
+.thumbnail{
+  .gradient{
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: -webkit-gradient(linear, 0 70%, 0 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.70)));
+  }
+}
