@@ -1,6 +1,6 @@
 class PropertyListingsController < ApplicationController
   def index
-    render :json => PropertyListing.all
+    render :json => PropertyListing.all, current_user_id: current_user.id
   end
 
   def create

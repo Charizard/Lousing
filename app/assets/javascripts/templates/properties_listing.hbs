@@ -4,7 +4,7 @@
   {{#unless currentUser.is_landlord}}
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="tab active"><a href="#all_properties" aria-controls="all_properties" role="tab" data-toggle="tab">{{length}} Results</a></li>
-      <li role="presentation" class="tab"><a href="#shortlisted_properties" aria-controls="shortlisted_properties" role="tab" data-toggle="tab">{{currentUser.short_listed_properties.length}} Shortlist</a></li>
+      <li role="presentation" class="tab"><a href="#shortlisted_properties" aria-controls="shortlisted_properties" role="tab" data-toggle="tab">{{shortlistedProperties.length}} Shortlist</a></li>
     </ul>
   {{/unless}}
 
@@ -12,15 +12,15 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="all_properties">
       <div class="property-listing-index">
-        {{#each}}
-          {{property-listing-card property_listing=this.model current_user=currentUser}}
+        {{#each propertyListing in controller itemController="property_listing"}}
+          {{property-listing-card property_listing=propertyListing current_user=currentUser}}
         {{/each}}
       </div>
     </div>
     {{#unless currentUser.is_landlord}}
       <div role="tabpanel" class="tab-pane fade" id="shortlisted_properties">
         <div class="property-listing-index">
-          {{render "shortlisted_properties" currentUser.short_listed_properties}}
+          {{render "shortlisted_properties" shortlistedProperties}}
         </div>
       </div>
     {{/unless}}

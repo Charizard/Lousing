@@ -12,4 +12,11 @@ class PropertyListing < ActiveRecord::Base
 
     self.image_url = "/#{image_numbers.sample}.jpg"
   end
+
+  def is_shortlisted_by_user(user_id)
+    PropertyListingsUser.where(
+      :user_id => user_id,
+      :property_listing_id => self.id
+    ).count == 1
+  end
 end

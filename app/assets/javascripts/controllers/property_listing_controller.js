@@ -1,16 +1,13 @@
 Lousing.PropertyListingController = Ember.ObjectController.extend({
   actions: {
     toggleShortlist: function(){
-      if(this.get('model.shortlisted_users.length') == 0) {
+      if(!this.get('model.isShortlisted')) {
         var self = this;
         $.post(
           '/property_shortlistings',
           { property_shortlisting: { user_id: this.currentUser.get('id'), property_listing_id: this.get('model.id') } },
           function(property_shortlist){
-            // We are associating the shortlisted_users of the property_listing
-            // directly to the user, we need to create it.
-            self.currentUser.get('short_listed_properties').
-              addObject(self.get('model'));
+            self.set('isShortlisted', true);
           },
           "json"
         ).fail( function(){
@@ -26,10 +23,7 @@ Lousing.PropertyListingController = Ember.ObjectController.extend({
           type: "DELETE",
           data: { property_shortlisting: { user_id: this.currentUser.get('id'), property_listing_id: this.get('model.id') } },
           success: function(response){
-            // We had associated the shortlisted_users of the property_listing
-            // directly to the user, we need to remove it.
-            self.currentUser.get('short_listed_properties').
-              removeObject(property_listing);
+            self.set('isShortlisted', false);
           },
           error: function(){
             Lousing.Alert('danger', "Cannot shortlist the property");

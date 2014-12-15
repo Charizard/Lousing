@@ -11,7 +11,7 @@
         </h3>
         {{#unless hideShortlist}}
           {{#unless current_user.is_landlord}}
-            <i {{bind-attr class=":icon-top-right :icon-shortlist isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist' bubbles=false}}></i>
+            <i {{bind-attr class=":icon-top-right :icon-shortlist property_listing.isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist' bubbles=false}}></i>
           {{/unless}}
         {{/unless}}
       </div>
