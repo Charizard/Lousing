@@ -3,7 +3,7 @@ class PropertyListingSerializer < ApplicationSerializer
 
   attributes :id, :bhk, :address, :property_type, :buildup_area, :bathrooms,
              :furnish_type, :rent, :security_deposit, :created_at, :poster_id,
-             :image_url, :is_shortlisted
+             :image_url, :is_shortlisted, :is_created
 
   def created_at
     time_ago_in_words object.created_at
@@ -11,5 +11,9 @@ class PropertyListingSerializer < ApplicationSerializer
 
   def is_shortlisted
     object.is_shortlisted_by_user(serialization_options[:current_user_id])
+  end
+
+  def is_created
+    object.poster_id == serialization_options[:current_user_id]
   end
 end

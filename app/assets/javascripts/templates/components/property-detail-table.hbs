@@ -6,9 +6,11 @@
   {{#if current_user.is_landlord}}
     <p>
       {{property_listing.bhk}} BHK, {{property_listing.furnish_type}}
-      {{#link-to 'listings.edit' property_listing }}
-        Edit
-      {{/link-to}}
+      {{#if property_listing.isCreated}}
+        {{#link-to 'listings.edit' property_listing }}
+          Edit
+        {{/link-to}}
+      {{/if}}
     </p>
   {{else}}
     <h2>{{property_listing.bhk}} BHK, {{property_listing.furnish_type}}</h2>
