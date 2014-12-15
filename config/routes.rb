@@ -2,7 +2,7 @@ Lousing::Application.routes.draw do
   devise_for :users, :controllers => { :sessions => "json_sessions" }
   root :to => 'assets#index'
 
-  resources :users, :only => [] do
+  resources :users, :only => [:show] do
     get :logged_in_user, :on => :collection
   end
   resources :property_listings, :only => [:index, :create, :update] do

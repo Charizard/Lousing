@@ -6,4 +6,8 @@ class UsersController < ApplicationController
       render :json => { :error => "Not logged in" }
     end
   end
+
+  def show
+    render :json => User.find(params[:id])
+  end
 end
