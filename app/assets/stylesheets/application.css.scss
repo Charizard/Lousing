@@ -210,3 +210,9 @@ body, html, div.ember-view, .container-fluid { height: 100%; }
 .mgn-top-30{
   margin-top: 30px;
 }
+
+.shortlisted_users{
+  li{
+    list-style-type: none;
+  }
+}
