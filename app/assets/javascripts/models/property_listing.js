@@ -11,5 +11,6 @@ Lousing.PropertyListing = DS.Model.extend({
   image_url: DS.attr('string'),
   poster: DS.belongsTo('user', { async: true }),
   isShortlisted: DS.attr('boolean'),
-  isCreated: DS.attr('boolean')
+  isCreated: DS.attr('boolean'),
+  shortlisted_users: DS.hasMany('user', { async: true })
 });
