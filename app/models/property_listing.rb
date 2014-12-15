@@ -19,4 +19,8 @@ class PropertyListing < ActiveRecord::Base
       :property_listing_id => self.id
     ).count == 1
   end
+
+  def shortlisted_users
+    short_listed_by
+  end
 end

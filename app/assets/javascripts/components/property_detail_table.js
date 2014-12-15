@@ -1,4 +1,5 @@
 Lousing.PropertyDetailTableComponent = Ember.Component.extend({
+  shortlisted_count: Ember.computed.alias('property_listing.shortlisted_users.length'),
   actions: {
     contact_agent: function(){
       var self = this;
