@@ -16,6 +16,7 @@ Ember.Application.initializer({
 
           container.typeInjection('controller', 'currentUser', 'user:current')
           container.typeInjection('route', 'currentUser', 'user:current')
+          container.typeInjection('component', 'currentUser', 'user:current')
           console.log('current_user request completed');
           application.advanceReadiness();
         } else {
