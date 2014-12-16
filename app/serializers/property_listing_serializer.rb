@@ -11,10 +11,10 @@ class PropertyListingSerializer < ApplicationSerializer
   end
 
   def is_shortlisted
-    object.is_shortlisted_by_user(serialization_options[:current_user_id])
+    object.is_shortlisted_by_user(scope.id)
   end
 
   def is_created
-    object.poster_id == serialization_options[:current_user_id]
+    object.poster_id == scope.id
   end
 end

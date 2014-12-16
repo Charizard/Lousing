@@ -17,7 +17,7 @@ class PropertyListing < ActiveRecord::Base
     PropertyListingsUser.where(
       :user_id => user_id,
       :property_listing_id => self.id
-    ).count == 1
+    ).exists?
   end
 
   def shortlisted_users
