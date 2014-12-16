@@ -9,8 +9,8 @@ class PropertyShortlistingsController < ApplicationController
     end
   end
 
-  def destroy_shortlisting
-    short_listing = PropertyListingsUser.find_by(property_shortlistings_params)
+  def destroy
+    short_listing = PropertyListingsUser.find(params[:id])
     if short_listing.destroy
       render :json => short_listing
     else

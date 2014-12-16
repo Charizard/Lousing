@@ -2,7 +2,9 @@ class PropertyListing < ActiveRecord::Base
   validates_presence_of :poster
 
   belongs_to :poster, :class_name => "User"
-  has_and_belongs_to_many :short_listed_by, :class_name => "User"
+
+  has_many :property_listings_users
+  has_many :short_listed_by, :through => :property_listings_users, :source => :user
 
   # Callbacks
   before_create :generate_dummy_image_url

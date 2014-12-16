@@ -5,38 +5,36 @@ Lousing.PropertyListingCardComponent = Ember.Component.extend({
     toggleShortlist: function(){
       if(!this.get('property_listing.isShortlisted')) {
         var self = this;
-        $.post(
-          '/property_shortlistings',
-          { property_shortlisting: { user_id: this.currentUser.get('id'), property_listing_id: this.get('property_listing.id') } },
+
+        var property_shortlisting = this.get('targetObject.store').createRecord('property_shortlisting', {
+          user: this.currentUser,
+          property_listing: this.get('property_listing')
+        });
+
+        property_shortlisting.save().then(
           function(property_shortlist){
             self.set('property_listing.isShortlisted', true);
-            self.get('property_listing.shortlisted_users')
-                .addObject(self.get('currentUser'));
-          },
-          "json"
-        ).fail( function(){
+          }
+          , function(){
             Lousing.Alert('danger', "Cannot shortlist the property");
             shortlist.rollback();
-        });
+          }
+        );
       } else {
         var property_listing = this.get('property_listing');
+        var property_shortlisting = property_listing.get('property_shortlisting');
 
         var self = this;
-        $.ajax({
-          url: 'property_shortlistings/destroy_shortlisting',
-          type: "DELETE",
-          data: { property_shortlisting: { user_id: this.currentUser.get('id'), property_listing_id: this.get('property_listing.id') } },
-          success: function(response){
+
+        property_shortlisting.destroyRecord().then(
+          function(response){
             self.set('property_listing.isShortlisted', false);
-            self.get('property_listing.shortlisted_users')
-                .removeObject(self.get('currentUser'));
           },
-          error: function(){
+          function(){
             Lousing.Alert('danger', "Cannot shortlist the property");
           }
-        });
+        );
       }
-
     }
   }
 });

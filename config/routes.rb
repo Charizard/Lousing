@@ -8,7 +8,5 @@ Lousing::Application.routes.draw do
   resources :property_listings, :only => [:index, :create, :update] do
     post :contact_agent, :on => :collection
   end
-  resources :property_shortlistings, :only => [:create] do
-    delete :destroy_shortlisting, :on => :collection
-  end
+  resources :property_shortlistings, :only => [:create, :destroy]
 end
