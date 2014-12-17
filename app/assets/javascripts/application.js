@@ -45,4 +45,28 @@ Lousing.Alert = function(type, message) {
   }, 3000);
 }
 
+Lousing.SignIn = function(signInData){
+  return Ember.$.ajax({
+    url: '/users/sign_in',
+    type: "POST",
+    data: signInData,
+    success: function(data) {
+      window.location = "";
+    },
+    error: function(response) {
+      alert(response.body);
+    }
+  });
+}
+
+Lousing.SignOut = function(){
+  Ember.$.ajax({
+    url: '/users/sign_out',
+    type: 'DELETE',
+    success: function(result) {
+      window.location = "";
+    }
+  });
+}
+
 //= require_tree .
