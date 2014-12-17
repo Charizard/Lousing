@@ -1,22 +1,22 @@
 <div class="col-md-3 thumbnail" style="top: 20px;">
     <div class="gradient"></div>
-    <img data-src="holder.js/90x90" {{bind-attr src="property_listing.image_url"}}/>
+    <img data-src="holder.js/90x90" {{bind-attr src="propertyListing.imageUrl"}}/>
 </div>
 <div class="col-md-9">
-  {{#if current_user.is_landlord}}
+  {{#if currentUser.isLandlord}}
     <p>
-      {{property_listing.bhk}} BHK, {{property_listing.furnish_type}}
-      {{#if property_listing.isCreated}}
-        {{#link-to 'listings.edit' property_listing }}
+      {{propertyListing.bhk}} BHK, {{propertyListing.furnishType}}
+      {{#if propertyListing.isCreated}}
+        {{#link-to 'listings.edit' propertyListing }}
           Edit
         {{/link-to}}
       {{/if}}
     </p>
   {{else}}
-    <h2>{{property_listing.bhk}} BHK, {{property_listing.furnish_type}}</h2>
-    <span class='pull-right'> Posted by: {{property_listing.poster.name}} ({{property_listing.poster.email}})</span>
+    <h2>{{propertyListing.bhk}} BHK, {{propertyListing.furnishType}}</h2>
+    <span class='pull-right'> Posted by: {{propertyListing.poster.name}} ({{propertyListing.poster.email}})</span>
     <span class='pull-left'>Shortlisted By: 
-      <a data-toggle="modal" data-target="#myModal">{{shortlisted_count}} {{pluralize_count}}</a>
+      <a data-toggle="modal" data-target="#myModal">{{shortlistedCount}} {{pluralizeCount}}</a>
     </span>
 
     <div class="modal fade" id="myModal">
@@ -28,7 +28,7 @@
           </div>
           <div class="modal-body">
             <ul class="shortlisted_users">
-              {{#each property_listing.shortlisted_users}}
+              {{#each propertyListing.shortlistedUsers}}
                 <li><b>{{name}}</b> ({{email}})</li>
               {{/each}}
             </ul>
@@ -40,14 +40,14 @@
   {{/if}}
   <h3 class="mgn-top-30">
     <span class="rupee-symbol"></span>
-    <span>{{property_listing.rent}}</span>
+    <span>{{propertyListing.rent}}</span>
   </h3>
   <h5 class="text-muted">
     Security Deposit:
     <span class="rupee-symbol"></span>
-    <span>{{property_listing.security_deposit}}</span>
+    <span>{{propertyListing.securityDeposit}}</span>
   </h5>
-  {{#unless current_user.is_landlord}}
+  {{#unless currentUser.isLandlord}}
     <div class="btn-dark-blue contact contact-section new-btn" {{action 'contact_agent'}}>
       <i class="icon icon-contact-filled"></i>
       <span class="text">Contact Landlord</span>
@@ -56,23 +56,23 @@
   <table class="details table table-condensed">
     <tr>
       <td>Property</td>
-      <td>{{property_listing.property_type}}</td>
+      <td>{{propertyListing.propertyType}}</td>
     </tr>
     <tr>
       <td>Build-Up Area</td>
-      <td>{{property_listing.buildup_area}} sq.ft</td>
+      <td>{{propertyListing.buildupArea}} sq.ft</td>
     </tr>
     <tr>
       <td>Bathrooms</td>
-      <td>{{property_listing.bathrooms}}</td>
+      <td>{{propertyListing.bathrooms}}</td>
     </tr>
     <tr>
       <td>Address</td>
-      <td>{{property_listing.address}}</td>
+      <td>{{propertyListing.address}}</td>
     </tr>
     <tr>
       <td>Posted</td>
-      <td>{{property_listing.created_at}} ago</td>
+      <td>{{propertyListing.createdAt}} ago</td>
     </tr>
   </table>
 </div>

@@ -1,18 +1,16 @@
 <li class="row property-listing">
-  {{#link-to 'property_detail' property_listing}}
+  {{#link-to 'property_detail' propertyListing}}
       <div class="col-md-4 thumbnail">
-        <img data-src="holder.js/90x90" {{bind-attr src="property_listing.image_url"}}/>
+        <img data-src="holder.js/90x90" {{bind-attr src="propertyListing.imageUrl"}}/>
       </div>
       <div class="col-md-8">
-        {{property_listing.bhk}} BHK, {{property_listing.furnish_type}}</p>
+        {{propertyListing.bhk}} BHK, {{propertyListing.furnishType}}</p>
         <h3>
           <span class="rupee-symbol"></span>
-          <b>{{property_listing.rent}}</b>
+          <b>{{propertyListing.rent}}</b>
         </h3>
         {{#unless hideShortlist}}
-          {{#unless current_user.is_landlord}}
-            <i {{bind-attr class=":icon-top-right :icon-shortlist property_listing.isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist' bubbles=false}}></i>
-          {{/unless}}
+          <i {{bind-attr class=":icon-top-right :icon-shortlist propertyListing.isShortlisted:icon-filled:icon-empty"}} {{action 'toggleShortlist' bubbles=false}}></i>
         {{/unless}}
       </div>
   {{/link-to}}

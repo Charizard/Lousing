@@ -3,32 +3,32 @@ Lousing.PropertyListingCardComponent = Ember.Component.extend({
   classNames: "no-margin",
   actions: {
     toggleShortlist: function(){
-      if(!this.get('property_listing.isShortlisted')) {
+      if(!this.get('propertyListing.isShortlisted')) {
         var self = this;
 
-        var property_shortlisting = this.get('targetObject.store').createRecord('property_shortlisting', {
+        var propertyShortlisting = this.get('targetObject.store').createRecord('property_shortlisting', {
           user: this.currentUser,
-          property_listing: this.get('property_listing')
+          property_listing: this.get('propertyListing')
         });
 
-        property_shortlisting.save().then(
-          function(property_shortlist){
-            self.set('property_listing.isShortlisted', true);
+        propertyShortlisting.save().then(
+          function(){
+            self.set('propertyListing.isShortlisted', true);
           }
           , function(){
             Lousing.Alert('danger', "Cannot shortlist the property");
-            shortlist.rollback();
+            propertyShortlisting.rollback();
           }
         );
       } else {
-        var property_listing = this.get('property_listing');
-        var property_shortlisting = property_listing.get('property_shortlisting');
+        var propertyListing = this.get('propertyListing');
+        var propertyShortlisting = propertyListing.get('property_shortlisting');
 
         var self = this;
 
-        property_shortlisting.destroyRecord().then(
+        propertyShortlisting.destroyRecord().then(
           function(response){
-            self.set('property_listing.isShortlisted', false);
+            self.set('propertyListing.isShortlisted', false);
           },
           function(){
             Lousing.Alert('danger', "Cannot shortlist the property");

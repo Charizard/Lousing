@@ -1,7 +1,7 @@
 Lousing.ApplicationRoute = Ember.Route.extend({
   actions: {
     isLandlord: function(self, transition) {
-      if(self.currentUser.get('is_landlord')) {
+      if(self.currentUser.get('isLandlord')) {
         return true;
       } else {
         transition.abort();

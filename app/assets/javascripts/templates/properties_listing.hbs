@@ -1,7 +1,7 @@
 <div role="tabpanel">
 
   <!-- Nav tabs -->
-  {{#unless currentUser.is_landlord}}
+  {{#unless currentUser.isLandlord}}
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="tab active"><a href="#all_properties" aria-controls="all_properties" role="tab" data-toggle="tab">{{length}} Results</a></li>
       <li role="presentation" class="tab"><a href="#shortlisted_properties" aria-controls="shortlisted_properties" role="tab" data-toggle="tab">{{shortlistedProperties.length}} Shortlist</a></li>
@@ -12,15 +12,21 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="all_properties">
       <div class="property-listing-index">
-        {{#each propertyListing in model itemController="property_listing"}}
-          {{property-listing-card property_listing=propertyListing.model current_user=currentUser}}
-        {{/each}}
+        {{#if currentUser.isLandlord}}
+          {{#each propertyListing in model itemController="propertyListing"}}
+            {{property-listing-card propertyListing=propertyListing.model hideShortlist=true}}
+          {{/each}}
+        {{else}}
+          {{#each propertyListing in model itemController="propertyListing"}}
+            {{property-listing-card propertyListing=propertyListing.model}}
+          {{/each}}
+        {{/if}}
       </div>
     </div>
-    {{#unless currentUser.is_landlord}}
+    {{#unless currentUser.isLandlord}}
       <div role="tabpanel" class="tab-pane fade" id="shortlisted_properties">
         <div class="property-listing-index">
-          {{render "shortlisted_properties" shortlistedProperties}}
+          {{render "shortlistedProperties" shortlistedProperties}}
         </div>
       </div>
     {{/unless}}
